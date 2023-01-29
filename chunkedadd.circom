@@ -3,7 +3,7 @@ pragma circom 2.0.0;
 include "./lt.circom";
 
 template ChunkedAdd(m, n, base){
-  var numOutputs = calculateNumOutputs(m, n, base);
+  var numOutputs = m + (n \ base) + 1;
   var i;
   var j;
   var power =  2 ** base;
@@ -90,8 +90,4 @@ template ChunkedAdderIrregular(m, n, base){
     component lt2 = LessThanPower(base);
     lt2.in <== sum[m];
     lt2.out === 1;
-}
-
-function calculateNumOutputs(m, n, base) {
-  return m + (n \ base) + 1;
 }

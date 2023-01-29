@@ -1,10 +1,9 @@
 pragma circom 2.0.0;
 
 include "./verify.circom";
-include "../circomlib-cff5ab6/gates.circom";
-include "../circomlib-cff5ab6/sha256/sha256.circom";
-// include "../circomlib-cff5ab6/sha256/shift.circom";
-include "../circomlib-cff5ab6/bitify.circom";
+include "./circomlib-cff5ab6/gates.circom";
+include "./circomlib-cff5ab6/sha256/sha256.circom";
+include "./circomlib-cff5ab6/bitify.circom";
 
 template BatchVerify(n, m) {
   signal input msg[n];
