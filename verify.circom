@@ -6,8 +6,8 @@ include "./point-addition.circom";
 include "./pointcompress.circom";
 
 include "./sha512-0562652/sha512.circom";
-include "./circomlib-cff5ab6/comparators.circom";
-include "./circomlib-cff5ab6/gates.circom";
+include "../circomlib/circuits/comparators.circom";
+include "../circomlib/circuits/gates.circom";
 
 template Ed25519Verifier(n) {
   assert(n % 8 == 0);
