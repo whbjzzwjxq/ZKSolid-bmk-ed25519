@@ -6,7 +6,7 @@ template LessThanPower(base) {
   signal input in;
   signal output out;
 
-  out <-- 1 - ((in >> base) > 0);
+  out <-- (in >> base) > 0 ? 0 : 1;
   out * (out - 1) === 0;
 }
 
@@ -20,6 +20,6 @@ template LessThanBounded(base) {
   component lt2 = LessThanPower(base);
   lt2.in <== in[1];
 
-  out <-- in[0] < in[1];
+  out <-- in[0] < in[1] ? 1 : 0;
   out * (out - 1) === 0;
 }
